@@ -1,7 +1,7 @@
 # Orchparty::Rancher
 
 [![Build Status](https://travis-ci.org/jannishuebl/orchparty.svg?branch=master)](https://travis-ci.org/pschrammel/orchparty-rancher)
-[![Gem Version](https://badge.fury.io/rb/orchparty.svg)](https://badge.fury.io/rb/orchparty-rancher)
+[![Gem Version](https://badge.fury.io/rb/orchparty-rancher.svg)](https://badge.fury.io/rb/orchparty-rancher)
 
 This is a [Orchparty](https://orch.party/) plugin to generate
 docker-compose.yml and rancher-compose.yml files.
