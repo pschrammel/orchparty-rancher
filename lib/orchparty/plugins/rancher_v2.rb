@@ -14,6 +14,13 @@ module Orchparty
     end
   end
 
+  class ApplicationMixinBuilder
+    def rancher(&block)
+      @node.rancher = RancherBuilder.build(block)
+      self
+    end
+  end
+
   class ServiceBuilder
     def rancher(&block)
       @node.rancher = RancherBuilder.build(block)
