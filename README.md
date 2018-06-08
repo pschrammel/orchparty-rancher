@@ -38,11 +38,12 @@ application "test" do
      end
      lb_config do
        port_rules do
-          _ priority: 2
-          _ protocol: "tcp"
-          _ selector: "com.foo=baz"
-          _ source_port: 9200
-          _ target_port: 9200
+          _({priority: 2,
+             protocol: "tcp",
+             selector: "com.foo=baz",
+             source_port: 9200,
+             target_port: 9200
+            })
        end
      end
      health_check do

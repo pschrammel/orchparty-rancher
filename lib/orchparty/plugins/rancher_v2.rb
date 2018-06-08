@@ -1,8 +1,20 @@
 module Orchparty
+
+  class ArrayBuilder < Builder
+    def method_missing(_, *value, &block)
+       @array ||= AST.array
+       @array << value.first
+      self
+    end
+    
+     def _build
+      @array
+    end
+  end
   class LbConfigBuilder < HashBuilder
     def port_rules(&block)
       @hash ||= AST.hash
-      @hash[:port_rules]=HashBuilder.build(block)
+      @hash[:port_rules]=ArrayBuilder.build(block)
     end
   end
   
