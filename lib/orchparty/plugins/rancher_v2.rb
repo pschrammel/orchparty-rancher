@@ -1,4 +1,11 @@
 module Orchparty
+  class LbConfigBuilder < HashBuilder
+    def port_rules(&block)
+      @hash ||= AST.hash
+      @hash[:port_rules]=HashBuilder.build(block)
+    end
+  end
+  
   class RancherBuilder < HashBuilder
     def scale(num)
       @hash ||= AST.hash
@@ -11,6 +18,10 @@ module Orchparty
     def health_check(&block)
       @hash ||= AST.hash
       @hash[:health_check]=HashBuilder.build(block)
+    end
+    def lb_config(&block)
+      @hash ||= AST.hash
+      @hash[:lb_config]=LbConfigBuilder.build(block)
     end
   end
 

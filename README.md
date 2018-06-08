@@ -36,6 +36,15 @@ application "test" do
        _ start_first: true
        _ interval_millis: 30000
      end
+     lb_config do
+       port_rules do
+          _ priority: 2
+          _ protocol: "tcp"
+          _ selector: "com.foo=baz"
+          _ source_port: 9200
+          _ target_port: 9200
+       end
+     end
      health_check do
        _ healthy_threshold: 2
        _ initializing_timeout: 60000
